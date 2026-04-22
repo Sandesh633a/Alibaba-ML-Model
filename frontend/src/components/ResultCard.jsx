@@ -102,7 +102,7 @@ export default function ResultCard({ result, isVisible }) {
               transition={{ delay: 0.6 }}
               className="mt-6 pt-4 border-t border-white/10 w-full flex justify-between items-center text-[10px] text-slate-500 font-mono tracking-wide uppercase"
             >
-              <span>Logistic Regression</span>
+              <span>KNN</span>
               <span>Class Output: {result.prediction}</span>
             </motion.div>
           </div>

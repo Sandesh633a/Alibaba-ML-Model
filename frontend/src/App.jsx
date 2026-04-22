@@ -80,7 +80,7 @@ function App() {
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-violet-400 mt-2">Intelligence Hub</span>
           </h1>
           <p className="text-slate-400 max-w-2xl mx-auto text-base sm:text-lg">
-            Advanced intraday forecasting engine powered by Logistic Regression. Input key market metrics to predict closing movements.
+            Advanced intraday forecasting engine powered by KNN. Input key market metrics to predict closing movements.
           </p>
         </header>
 

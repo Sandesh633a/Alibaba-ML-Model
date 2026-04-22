@@ -1,4 +1,4 @@
-import { BookOpen, Database, TrendingUp, BarChart } from 'lucide-react';
+import { BookOpen, Database, TrendingUp, BarChart } from 'lucide-react'; 
 
 export default function ModelInfo() {
   return (
@@ -11,10 +11,13 @@ export default function ModelInfo() {
       </div>
       
       <p className="text-sm text-slate-300 mb-6 leading-relaxed">
-        This predictive engine is powered by a Logistic Regression algorithm trained on Ali Baba's historical stock data. It analyzes intraday market dynamics to forecast whether the closing price will surge above the opening price.
+        This predictive engine is powered by a K-Nearest Neighbors (KNN) algorithm trained on Ali Baba's historical stock data. 
+        It analyzes key market features such as price levels and trading volume to classify whether the closing price will exceed the opening price.
       </p>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        
+        {/* Dataset Info */}
         <div className="bg-slate-800/50 rounded-xl p-4 border border-slate-700/50">
           <div className="flex items-center gap-2 mb-2">
             <Database size={16} className="text-blue-400" />
@@ -24,19 +27,21 @@ export default function ModelInfo() {
           <p className="text-xs text-slate-400 mt-1">Daily historical records</p>
         </div>
 
+        {/* Algorithm Info */}
         <div className="bg-slate-800/50 rounded-xl p-4 border border-slate-700/50">
           <div className="flex items-center gap-2 mb-2">
             <BarChart size={16} className="text-emerald-400" />
             <span className="text-xs font-semibold text-slate-400 uppercase tracking-wider">Algorithm</span>
           </div>
-          <p className="text-sm font-medium text-white">Logistic Regression</p>
-          <p className="text-xs text-emerald-400/80 mt-1">Accuracy: ~52%</p>
+          <p className="text-sm font-medium text-white">K-Nearest Neighbors (KNN)</p>
+          <p className="text-xs text-emerald-400/80 mt-1">Accuracy: ~65–75%</p>
         </div>
+
       </div>
       
       <div className="mt-6 pt-4 border-t border-slate-700/50 flex items-center gap-2 text-xs text-slate-400">
         <TrendingUp size={14} className="text-slate-500" />
-        <span>Designed for intraday movement classification</span>
+        <span>Optimized for realistic market movement prediction</span>
       </div>
     </div>
   );
