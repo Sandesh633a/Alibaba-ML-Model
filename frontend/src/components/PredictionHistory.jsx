@@ -2,6 +2,10 @@ import { History, ArrowUpRight, ArrowDownRight, Clock } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function PredictionHistory({ history }) {
+
+  // ✅ Only keep last 5 predictions
+  const recentHistory = history.slice(-5).reverse();
+
   return (
     <div className="glass-panel rounded-2xl p-6 flex flex-col h-full max-h-[500px]">
       <div className="flex items-center gap-3 mb-6">
@@ -10,13 +14,13 @@ export default function PredictionHistory({ history }) {
         </div>
         <h3 className="text-lg font-bold text-white">Session History</h3>
         <span className="ml-auto text-xs font-medium bg-slate-800 text-slate-300 px-2.5 py-1 rounded-full">
-          {history.length} {history.length === 1 ? 'Record' : 'Records'}
+          {recentHistory.length} {recentHistory.length === 1 ? 'Record' : 'Records'}
         </span>
       </div>
 
       <div className="overflow-y-auto pr-2 custom-scrollbar flex-1 space-y-3">
         <AnimatePresence>
-          {history.length === 0 ? (
+          {recentHistory.length === 0 ? (
             <motion.div 
               initial={{ opacity: 0 }} 
               animate={{ opacity: 1 }} 
@@ -27,7 +31,7 @@ export default function PredictionHistory({ history }) {
               <p className="text-xs text-center mt-1 opacity-70">Your recent queries will appear here.</p>
             </motion.div>
           ) : (
-            history.map((item, index) => {
+            recentHistory.map((item) => {
               const isUp = item.result.movement === 'UP';
               const conf = (item.result.probability * 100).toFixed(1);
               
