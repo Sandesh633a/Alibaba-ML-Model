@@ -32,7 +32,9 @@ function App() {
     setIsVisible(false);
     
     try {
-      const response = await axios.post('/api/predict', data);
+      // Use environment variable for API URL in production, fallback to proxy in development
+      const apiUrl = import.meta.env.VITE_API_URL || '/api';
+      const response = await axios.post(`${apiUrl}/predict`, data);
       
       setTimeout(() => {
         setResult(response.data);

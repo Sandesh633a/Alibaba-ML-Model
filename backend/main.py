@@ -1,10 +1,20 @@
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import joblib
 import os
 import pandas as pd
 
 app = FastAPI(title="Stock Movement Prediction API")
+
+# Add CORS middleware for deployment
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Allows all origins in production, replace with specific domains as needed
+    allow_credentials=True,
+    allow_methods=["*"],  # Allows all methods
+    allow_headers=["*"],  # Allows all headers
+)
 
 # Load model globally
 model_path = 'model.joblib'
