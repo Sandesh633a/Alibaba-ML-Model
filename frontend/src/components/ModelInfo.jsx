@@ -11,8 +11,8 @@ export default function ModelInfo() {
       </div>
       
       <p className="text-sm text-slate-300 mb-6 leading-relaxed">
-        This predictive engine is powered by a K-Nearest Neighbors (KNN) algorithm trained on Ali Baba's historical stock data. 
-        It analyzes key market features such as price levels and trading volume to classify whether the closing price will exceed the opening price.
+        This predictive engine is powered by a Logistic Regression algorithm trained on Ali Baba's historical stock data. 
+        It analyzes key market features such as price range, trading volume, and price levels to classify whether the closing price will exceed the opening price.
       </p>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -33,15 +33,15 @@ export default function ModelInfo() {
             <BarChart size={16} className="text-emerald-400" />
             <span className="text-xs font-semibold text-slate-400 uppercase tracking-wider">Algorithm</span>
           </div>
-          <p className="text-sm font-medium text-white">K-Nearest Neighbors (KNN)</p>
-          <p className="text-xs text-emerald-400/80 mt-1">Accuracy: ~65–75%</p>
+          <p className="text-sm font-medium text-white">Logistic Regression</p>
+          <p className="text-xs text-emerald-400/80 mt-1">Accuracy: ~80%</p>
         </div>
 
       </div>
       
       <div className="mt-6 pt-4 border-t border-slate-700/50 flex items-center gap-2 text-xs text-slate-400">
         <TrendingUp size={14} className="text-slate-500" />
-        <span>Optimized for realistic market movement prediction</span>
+        <span>Optimized for stable and generalizable market prediction</span>
       </div>
     </div>
   );
